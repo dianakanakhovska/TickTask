@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TickTask PRO</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+    <h1>TickTask</h1>
+    <button id="theme"><i class="ri-moon-line"></i></button>
+</header>
+
+<!-- Pomodoro -->
+<div class="pomodoro">
+
+    <div class="modes">
+        <button class="mode-btn active" data-mode="focus">Фокус</button>
+        <button class="mode-btn" data-mode="short">Перерва</button>
+        <button class="mode-btn" data-mode="long">Довга</button>
+    </div>
+
+    <div class="timer-wrapper">
+        <div id="time">25:00</div>
+        <input id="time-input" type="number" class="hidden">
+    </div>
+
+    <div class="controls">
+        <button id="start"><i class="ri-play-fill"></i></button>
+        <button id="reset"><i class="ri-refresh-line"></i></button>
+    </div>
+
+    <div class="progress">
+        <div id="progress-bar"></div>
+    </div>
+
+    <p>Сесій: <span id="sessions">0</span></p>
+
+</div>
+
+<!-- Search -->
+<input id="search" placeholder="Пошук...">
+
+<!-- Form -->
+<form id="form">
+    <input id="input" placeholder="Нове завдання..." required>
+
+    <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+    </select>
+
+    <input type="date" id="deadline">
+
+    <button>+</button>
+</form>
+
+<!-- Filters -->
+<div class="filters">
+    <button data-f="all" class="active">Всі</button>
+    <button data-f="active">Активні</button>
+    <button data-f="done">Виконані</button>
+</div>
+
+<ul id="list"></ul>
+
+<div id="empty">Немає задач 😴</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
